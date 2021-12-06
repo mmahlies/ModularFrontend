@@ -1,0 +1,61 @@
+{
+  "name": "lib1",
+  "version": "0.1.2",
+  "private": true,
+  "main": "./dist/lib1.ssr.js",
+  "module": "./dist/lib1.esm.js",
+  "browser": "./dist/lib1.js",
+  "unpkg": "./dist/lib1.js",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "build-lib": "vue-cli-service build --target lib ./src/main.js --mode production",
+    "build-rollup": "rollup -c --environment BUILD:production"
+  },
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.2.24",
+    "core-js": "^3.6.5",
+    "lodash": "^4.17.21",
+    "underscore": "^1.13.1",
+    "vite": "^2.6.14",
+    "vue": "^2.6.11",
+    "vue-router": "^3.5.3"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "rollup-plugin-css-only": "^0.4.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "^4.5.15",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "rollup": "^2.60.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.31.1",
+    "rollup-plugin-vue": "^6.0.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
