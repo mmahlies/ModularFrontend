@@ -2,7 +2,7 @@
   "name": "lib1",
   "version": "0.1.2",
   "private": true,
-  "main": "./dist/lib1.ssr.js",
+  "main": "./dist/lib1.common.js",
   "module": "./dist/lib1.esm.js",
   "browser": "./dist/lib1.js",
   "unpkg": "./dist/lib1.js",
