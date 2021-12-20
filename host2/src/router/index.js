@@ -5,7 +5,8 @@ const Home = () => import ('../views/Home.vue')
 const About = () => import('../views/a.vue')
 Vue.use(VueRouter)
 
-import {routes as rFromLib} from 'lib1'
+import { rFromLib} from 'lib1'
+console.log(rFromLib);
 const r = [
   {
     path: '/',

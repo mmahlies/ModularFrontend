@@ -1,5 +1,5 @@
-import {routes} from './router'
-export {routes}
+import {routes as rFromLib} from './router'
+export {rFromLib}
 
 //import about from './views/About.vue'
 //import _ from 'lodash';

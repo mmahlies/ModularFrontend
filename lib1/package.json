@@ -3,17 +3,24 @@
   "version": "0.1.2",
   "private": true,
   "main": "./dist/lib1.common.js",
-  "module": "./dist/lib1.esm.js",
+  "module": "./dist/es/main.js",
   "browser": "./dist/lib1.js",
   "unpkg": "./dist/lib1.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-lib": "vue-cli-service build --target lib ./src/main.js --mode production",
-    "build-rollup": "rollup -c --environment BUILD:production"
+    "build-lib": "vue-cli-service build --target lib --modern ./src/main.js --mode production",
+    "build-rollup": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config rollup.config.js --format umd --dir dist/umd",
+    "build:es": "rollup --config rollup.config.js --format es --dir dist/es",
+    "build:unpkg": "rollup --config rollup.config.js --format iife --dir dist/unpkg"
   },
   "dependencies": {
+    "rollup": "^1.17.0",
+    "@rollup/plugin-buble": "^0.21.3",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "rollup-plugin-vue": "^5.0.1",
     "@vue/compiler-sfc": "^3.2.24",
     "core-js": "^3.6.5",
     "lodash": "^4.17.21",
